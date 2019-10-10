@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+<script>
+
+Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: '2005 UCSD Applications by Gender'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <br>{point.percentage:.1f} %<br>Total: {point.y}'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '{point.name}: <br>{point.percentage:.1f} %<br>Total: {point.y}'
+            }
+        }
+    },
+    series: [{
+        colorByPoint: true,
+        data: [{
+            name: 'Women',
+            y: 22371,
+        }, {
+            name: 'Men',
+            y: 18147
+        }]
+    }]
+});
+</script>

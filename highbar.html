@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+
+<script>
+
+Highcharts.chart('container', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'UCSD Applications (2010-2018)'
+    },
+	
+    xAxis: {
+        categories: ['2018', '2017', '2016', '2015', '2014', '2013','2012','2011', '2010','2009','2008','2007','2006','2005'],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Fulltime Enrollment',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -40,
+        y: 140,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor:
+            Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+        shadow: true
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'Men',
+        data: [3220,2725,2669,2711,2538,2616,2328,1583,1858,1695,1893,1838,2031,1607]
+    }, {
+        name: 'Women',
+        data: [3484,2974,3077,2581,2383,2612,2245,1861,2089,2054,2399,2303,2558,2113]
+    }]
+});
+</script>

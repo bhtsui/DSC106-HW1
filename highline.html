@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+
+<script>
+
+Highcharts.chart('container', {
+
+    title: {
+        text: 'UCSD Admittance'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Fulltime Admits'
+        }
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 2005
+        }
+    },
+
+    series: [{
+        name: 'Men',
+        data: [7580,9210,8419,8517,7816,8365,8707,10917,11866,11758,12748,14103,13981,13781]
+    },{  
+        name: 'Women', 
+        data: [10311,12135,10759,11200,9863,9991,10269,12046,12966,12837,13761,16170,16231,15821]
+    }],
+
+
+});
+</script>
